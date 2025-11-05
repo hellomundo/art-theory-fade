@@ -47,7 +47,7 @@ const Index = () => {
     <div className="fixed inset-0 flex items-center justify-center overflow-hidden">
       <ParticleBackground />
       <h1 
-        className="relative z-10 text-6xl md:text-8xl lg:text-9xl font-light tracking-wider"
+        className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-light tracking-wider"
         style={{ fontFamily: "'Playfair Display', serif" }}
       >
         Art & Theory
