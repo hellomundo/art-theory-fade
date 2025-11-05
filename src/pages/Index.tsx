@@ -1,27 +1,22 @@
 import { useEffect, useState } from 'react';
 import { ParticleBackground } from '@/components/ParticleBackground';
-
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
-
   useEffect(() => {
     // Check system preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setIsDark(prefersDark);
-    
     if (prefersDark) {
       document.documentElement.classList.add('dark');
     }
   }, []);
-
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.code === 'Space') {
         e.preventDefault();
-        
+
         // Add transitioning class for smooth fade
         document.documentElement.classList.add('transitioning');
-        
         setIsDark(prev => {
           const newIsDark = !prev;
           if (newIsDark) {
@@ -38,22 +33,14 @@ const Index = () => {
         }, 3000);
       }
     };
-
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, []);
-
-  return (
-    <div className="fixed inset-0 flex items-center justify-center overflow-hidden">
+  return <div className="fixed inset-0 flex items-center justify-center overflow-hidden">
       <ParticleBackground />
-      <h1 
-        className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-light tracking-wider"
-        style={{ fontFamily: "'Playfair Display', serif" }}
-      >
-        Art & Theory
-      </h1>
-    </div>
-  );
+      <h1 style={{
+      fontFamily: "'Playfair Display', serif"
+    }} className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-light">ART & THEORY</h1>
+    </div>;
 };
-
 export default Index;
