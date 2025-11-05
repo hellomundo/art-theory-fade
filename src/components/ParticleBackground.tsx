@@ -33,9 +33,9 @@ export const ParticleBackground = () => {
     particlesRef.current = Array.from({ length: particleCount }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      size: Math.random() * 2 + 0.5,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5,
+      size: Math.random() * 3 + 1,
     }));
 
     const animate = () => {
@@ -61,7 +61,7 @@ export const ParticleBackground = () => {
         // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsl(${particleColor} / 0.15)`;
+        ctx.fillStyle = `hsl(${particleColor} / 0.4)`;
         ctx.fill();
       });
 
