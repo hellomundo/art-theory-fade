@@ -40,7 +40,7 @@ const Index = () => {
       <ParticleBackground />
       <h1 style={{
       fontFamily: "'Playfair Display', serif"
-    }} className="relative z-10 text-3xl md:text-4xl lg:text-5xl font-light">ART & THEORY</h1>
+    }} className="relative z-10 text-xl md:text-xl lg:text-xl font-light opacity-60">ART & THEORY</h1>
     </div>;
 };
 export default Index;

@@ -75,8 +75,8 @@ export const ParticleBackground = () => {
         // Apply velocity with damping
         particle.x += particle.vx;
         particle.y += particle.vy;
-        particle.vx *= 0.95;
-        particle.vy *= 0.95;
+        //particle.vx *= 0.95;
+        //particle.vy *= 0.95;
         
         // Update rotation
         particle.rotation += particle.rotationSpeed;
