@@ -15,6 +15,6 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/art-theory-fade',
+  base: '/art-theory-fade/',
   build: { outDir: 'build' }
 }));
