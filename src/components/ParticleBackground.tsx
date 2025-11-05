@@ -58,11 +58,23 @@ export const ParticleBackground = () => {
         if (particle.y < 0) particle.y = canvas.height;
         if (particle.y > canvas.height) particle.y = 0;
 
-        // Draw particle
+        // Draw particle as cross/plus sign
+        ctx.strokeStyle = `hsl(${particleColor} / 0.4)`;
+        ctx.lineWidth = 0.5;
+        
+        const halfSize = particle.size;
+        
+        // Horizontal line
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsl(${particleColor} / 0.4)`;
-        ctx.fill();
+        ctx.moveTo(particle.x - halfSize, particle.y);
+        ctx.lineTo(particle.x + halfSize, particle.y);
+        ctx.stroke();
+        
+        // Vertical line
+        ctx.beginPath();
+        ctx.moveTo(particle.x, particle.y - halfSize);
+        ctx.lineTo(particle.x, particle.y + halfSize);
+        ctx.stroke();
       });
 
       animationFrameRef.current = requestAnimationFrame(animate);
